@@ -1,0 +1,51 @@
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.sm-only {
+  @media screen and (min-width: $md-breakpoint) {
+    display: none !important;
+  }
+}
+
+.md-only {
+  @media screen and (max-width: $md-breakpoint - 1) {
+    display: none !important;
+  }
+
+  @media screen and (min-width: $lg-breakpoint) {
+    display: none !important;
+  }
+}
+
+.lg-only {
+  @media screen and (max-width: $lg-breakpoint - 1) {
+    display: none !important;
+  }
+}
+
+.sm-hidden {
+  @media screen and (max-width: $md-breakpoint - 1) {
+    display: none !important;
+  }
+}
+
+.md-hidden {
+  @media screen and (min-width: $md-breakpoint) and(max-width: $lg-breakpoint - 1) {
+    display: none !important;
+  }
+}
+
+.lg-hidden {
+  @media screen and (min-width: $lg-breakpoint) {
+    display: none !important;
+  }
+}
