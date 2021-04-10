@@ -1,0 +1,9 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $overlay-level;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba($primary, 0.5);
+}
