@@ -8,6 +8,10 @@
   padding: 12px 0;
   background-color: $white;
 
+  &-header {
+    margin-bottom: 20px;
+  }
+
   &-form {
     @include flexbox(between);
 
