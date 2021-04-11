@@ -56,13 +56,63 @@
               </div>
 
               <div class="gnb-right">
-                <div class="input-group lg-only">
-                  <i class="ic-search" aria-hidden></i>
-                  <input
-                    class="form-input"
-                    type="text"
-                    placeholder="스토어 검색"
-                  />
+                <div class="gnb-search">
+                  <div class="input-group lg-only">
+                    <i class="ic-search" aria-hidden></i>
+                    <input
+                      class="form-input"
+                      type="text"
+                      placeholder="스토어 검색"
+                    />
+                  </div>
+
+                  <section class="search-history is-active">
+                    <header class="search-history-header">
+                      <h2 class="title">최근 검색어</h2>
+                      <button type="button">전체 삭제</button>
+                    </header>
+
+                    <div class="search-history-content">
+                      <ol class="search-history-list">
+                        <li class="search-history-item">
+                          <button class="word-button" type="button">
+                            김버그
+                          </button>
+                          <button
+                            class="delete-button"
+                            type="button"
+                            aria-label="검색어 삭제"
+                          >
+                            <i class="ic-close"></i>
+                          </button>
+                        </li>
+                        <li class="search-history-item">
+                          <button class="word-button" type="button">
+                            버그
+                          </button>
+                          <button
+                            class="delete-button"
+                            type="button"
+                            aria-label="검색어 삭제"
+                          >
+                            <i class="ic-close"></i>
+                          </button>
+                        </li>
+                        <li class="search-history-item">
+                          <button class="word-button" type="button">
+                            튕김버그
+                          </button>
+                          <button
+                            class="delete-button"
+                            type="button"
+                            aria-label="검색어 삭제"
+                          >
+                            <i class="ic-close"></i>
+                          </button>
+                        </li>
+                      </ol>
+                    </div>
+                  </section>
                 </div>
 
                 <!-- NOTE: 로그인을 한 경우  -->
