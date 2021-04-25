@@ -1,0 +1,71 @@
+.global-footer {
+  padding-top: 32px;
+  padding-bottom: 40px;
+  background-color: $background;
+
+  &-title {
+    @include text-style(13, $dark);
+    font-weight: 700;
+
+    .ic-chevron {
+      display: inline-block;
+      font-size: 12px;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &-contact {
+    @include text-style(24, $dark);
+    font-weight: 700;
+  }
+
+  &-time {
+    @include text-style(12, $primary);
+    margin-bottom: 24px;
+  }
+
+  &-detail-list {
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: -0.01em;
+    color: $secondary;
+  }
+
+  &-detail-item {
+    @include flexbox(start);
+
+    address {
+      display: inline;
+    }
+
+    dt::after {
+      margin: 0 2px;
+      content: ':';
+    }
+  }
+
+  @include responsive(D) {
+    &-title {
+      @include text-style(14);
+    }
+
+    &-contact:hover {
+      opacity: 0.5;
+    }
+
+    &-detail-list {
+      @include flexbox(start);
+    }
+
+    &-detail-item {
+      a:hover {
+        text-decoration: underline;
+      }
+
+      &:not(:last-child)::after {
+        margin: 0 8px;
+        content: '|';
+      }
+    }
+  }
+}
