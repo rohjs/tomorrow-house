@@ -10,36 +10,34 @@
   &-thumbnail {
     @include pos-center-x;
     bottom: 16px;
+  }
 
-    .thumbnail {
-      &-list {
-        @include flexbox;
+  .thumbnail-list {
+    @include flexbox;
+  }
+
+  .thumbnail-item {
+    @include flexbox;
+    margin: 0 4px;
+
+    &.tns-nav-active {
+      button {
+        opacity: 1;
+        transform: scale(1.333333);
       }
+    }
 
-      &-item {
-        @include flexbox;
-        margin: 0 4px;
+    button {
+      width: 6px;
+      height: 6px;
+      background-color: $white;
+      border-radius: 50%;
+      opacity: 0.7;
+      transition: transform 100ms ease-in-out, opacity 100ms ease-in-out;
+    }
 
-        &.tns-nav-active {
-          button {
-            opacity: 1;
-            transform: scale(1.333333);
-          }
-        }
-
-        button {
-          width: 6px;
-          height: 6px;
-          background-color: $white;
-          border-radius: 50%;
-          opacity: 0.7;
-          transition: transform 100ms ease-in-out, opacity 100ms ease-in-out;
-        }
-
-        img {
-          display: none;
-        }
-      }
+    img {
+      display: none;
     }
   }
 
