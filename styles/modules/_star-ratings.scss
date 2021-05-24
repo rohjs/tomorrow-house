@@ -1,31 +1,15 @@
-%star-rating-base {
-  @include flexbox(start);
-
-  .ic-star {
-    color: $border;
-
-    &.is-active {
-      color: $blue;
-    }
-  }
-}
-
 .star-rating-13 {
-  @extend %star-rating-base;
-  font-size: 13px;
+  @include star-rating(13px);
 }
 
 .star-rating-16 {
-  @extend %star-rating-base;
-  font-size: 16px;
+  @include star-rating(16px);
 }
 
 .star-rating-20 {
-  @extend %star-rating-base;
-  font-size: 20px;
+  @include star-rating(20px);
 }
 
 .star-rating-24 {
-  @extend %star-rating-base;
-  font-size: 24px;
+  @include star-rating(24px);
 }
