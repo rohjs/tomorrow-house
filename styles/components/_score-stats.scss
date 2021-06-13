@@ -1,0 +1,66 @@
+.score-stats {
+  &-list {
+    display: inline-block;
+  }
+
+  &-item {
+    @include flexbox(start);
+    @include text-style(12, $secondary);
+    margin-bottom: 4px;
+
+    &.is-active {
+      dt,
+      .count {
+        font-weight: 700;
+        color: $blue;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    dt {
+      margin-right: 4px;
+    }
+
+    dd {
+      @include flexbox;
+
+      .bar-graph {
+        width: 70px;
+        height: 5px;
+        margin-right: 4px;
+        overflow: hidden;
+        background-color: $border;
+        border-radius: (5px / 2);
+
+        .active-bar {
+          width: 30px;
+          height: 5px;
+          background-color: $blue;
+          border-radius: (5px / 2);
+        }
+      }
+
+      .count {
+        font-weight: 400;
+      }
+    }
+  }
+
+  @include responsive(T) {
+    &-item {
+      dt {
+        margin-right: 8px;
+      }
+
+      dd {
+        .bar-graph {
+          width: 180px;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
