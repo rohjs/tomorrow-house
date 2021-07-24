@@ -26,6 +26,7 @@
 
   &-title {
     @include text-style(13, $dark);
+    @include line-clamp(2);
     font-weight: 400;
     line-height: 16px;
   }
