@@ -17,7 +17,7 @@
 
       &:active {
         img {
-          transform: scale(1.1);
+          transform: translate(-50%, -50%) scale(1.1);
         }
 
         .product-card-title {
@@ -41,7 +41,7 @@
   @include responsive(D) {
     .product-item a:hover {
       img {
-        transform: scale(1.1);
+        transform: translate(-50%, -50%) scale(1.1);
       }
 
       .product-card-title {
