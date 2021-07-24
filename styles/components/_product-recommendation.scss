@@ -1,0 +1,26 @@
+.product-recommendation {
+  .product-list {
+    @include flexbox(between, start);
+    flex-wrap: wrap;
+  }
+
+  .product-item {
+    width: calc(50% - 10px); // (100% - 20px) / 2
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      margin-bottom: 20px;
+    }
+  }
+
+  @include responsive(T) {
+    .product-item {
+      width: calc(33.333% - 11px); // (100% - 32px) / 3
+      margin-bottom: 0 !important;
+
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}
