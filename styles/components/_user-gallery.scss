@@ -1,0 +1,7 @@
+.user-gallery {
+  margin: 0 -#{$grid-margin};
+
+  @include responsive(T) {
+    margin: 0;
+  }
+}
