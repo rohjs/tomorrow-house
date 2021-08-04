@@ -49,6 +49,8 @@
   }
 
   @include responsive(T) {
+    padding-top: 0;
+
     .product-table {
       margin-top: 40px;
     }

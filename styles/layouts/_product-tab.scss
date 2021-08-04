@@ -45,6 +45,7 @@
   @include responsive(T) {
     top: $gnb-height-md + $lnb-height-md;
     height: 54px;
+    margin: 40px 0;
     background-color: $background;
     border-bottom: 0;
 
