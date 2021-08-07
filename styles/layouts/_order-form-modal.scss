@@ -5,10 +5,13 @@
   z-index: $order-form-modal-level;
   display: none;
   width: 100%;
+  max-height: 75vh;
   padding-top: 16px;
+  overflow-y: auto;
   background-color: $white;
   border-radius: 12px 12px 0 0;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  overscroll-behavior: contain;
 
   &.is-open {
     display: block;
@@ -16,9 +19,12 @@
     animation-name: modal-fade-in;
   }
 
-  .order-checkouts,
-  .order-summary {
+  .order-checkouts {
     margin-bottom: 16px;
+  }
+
+  .order-summary {
+    margin-bottom: 48px + (4px * 2) + 16px;
   }
 
   .order-inputs {
@@ -26,8 +32,12 @@
   }
 
   .button-group {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     padding: 4px;
-    padding-top: 0;
+    background-color: $white;
   }
 
   @include responsive(T) {
