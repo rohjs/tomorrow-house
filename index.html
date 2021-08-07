@@ -2404,6 +2404,111 @@
       </div>
     </aside>
 
+    <aside class="order-form-modal lg-hidden">
+      <h1 class="visually-hidden">주문창</h1>
+
+      <form class="order-form" action="/" method="POST">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="order-inputs">
+                <div class="select-group is-active">
+                  <select
+                    class="form-select"
+                    id="order-form-modal-select-1"
+                    required
+                  >
+                    <option value="">선택</option>
+                    <option value="1">선택사항 1</option>
+                    <option value="2">선택사항 2</option>
+                    <option value="3">선택사항 3</option>
+                    <option value="4">선택사항 4</option>
+                    <option value="5">선택사항 5</option>
+                  </select>
+                  <i class="ic-caret" aria-hidden></i>
+                </div>
+                <div class="select-group">
+                  <select class="form-select" id="order-form-modal-select-2">
+                    <option value="">추가상품 (선택)</option>
+                    <option value="1">선택사항 1</option>
+                    <option value="2">선택사항 2</option>
+                    <option value="3">선택사항 3</option>
+                    <option value="4">선택사항 4</option>
+                    <option value="5">선택사항 5</option>
+                  </select>
+                  <i class="ic-caret" aria-hidden></i>
+                </div>
+              </div>
+
+              <div class="order-checkouts">
+                <ul class="checkout-list">
+                  <li class="checkout-item">
+                    <div class="checkout-card">
+                      <header class="checkout-header">
+                        <h4 class="checkout-title">
+                          추가상품 - 맛있는 제주 감귤을 직배송 / 제주도 귤 판매
+                          1위 믿고 구매하세요.
+                        </h4>
+                        <button
+                          class="delete-button"
+                          type="button"
+                          aria-label="해당 상품을 삭제하기"
+                        >
+                          <i class="ic-close" aria-hidden></i>
+                        </button>
+                      </header>
+
+                      <footer class="checkout-footer">
+                        <div class="checkout-select">
+                          <select id="order-form-modal-checkout-item-1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                          <i class="ic-caret" aria-hidden></i>
+                        </div>
+
+                        <output
+                          class="checkout-output"
+                          for="order-form-modal-checkout-item-1"
+                        >
+                          <div class="price-16">
+                            <strong class="amount">32,900</strong>
+                            <span class="currency">원</span>
+                          </div>
+                        </output>
+                      </footer>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <dl class="order-summary">
+                <dt>주문금액</dt>
+                <dd>
+                  <output
+                    for="order-form-modal-select-1 order-form-modal-select-2"
+                  >
+                    <div class="price-20">
+                      <strong class="amount">0</strong>
+                      <span class="currency">원</span>
+                    </div>
+                  </output>
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button class="btn-secondary btn-48" type="button">장바구니</button>
+          <button class="btn-primary btn-48" type="submit">구매하기</button>
+        </div>
+      </form>
+    </aside>
+
     <div class="overlay" aria-hidden></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
