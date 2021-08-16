@@ -5,7 +5,7 @@ import { media } from 'src/styles/utils'
 import type { ColumnProps } from './Column'
 import type { RowProps } from './Row'
 
-export const Container = styled.div`
+export const StyledContainer = styled.div`
   width: 100%;
   padding: 0 5px;
   margin: 0 auto;
@@ -21,7 +21,7 @@ export const Container = styled.div`
   `}
 `
 
-export const Column = styled.div<ColumnProps>`
+export const StyledColumn = styled.div<ColumnProps>`
   width: ${({ sm }) => `${(100 / 4) * sm}%`};
   padding: 0 ${({ theme }) => theme.gutter};
 
@@ -38,7 +38,7 @@ export const Column = styled.div<ColumnProps>`
   `}
 `
 
-export const Row = styled.div<RowProps>`
+export const StyledRow = styled.div<RowProps>`
   display: flex;
   flex-wrap: wrap;
 

@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import * as Styled from './styles'
+import { StyledColumn } from './styles'
 
 export interface ColumnProps {
   sm: number
@@ -10,8 +10,8 @@ export interface ColumnProps {
 
 export const Column = ({ sm, md, lg = md, children }: ColumnProps) => {
   return (
-    <Styled.Column sm={sm} md={md} lg={lg}>
+    <StyledColumn sm={sm} md={md} lg={lg}>
       {children}
-    </Styled.Column>
+    </StyledColumn>
   )
 }

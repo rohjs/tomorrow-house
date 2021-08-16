@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { Row as StyledRow } from './styles'
+import { StyledRow } from './styles'
 
 export interface RowProps {
   className?: string
