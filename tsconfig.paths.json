@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "src": ["src/*"],
+      "components": ["src/components/*"],
+      "images": ["src/images/*"],
+      "styles": ["src/styles.scss"]
+    }
+  }
+}
