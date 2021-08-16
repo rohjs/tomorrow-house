@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { visuallyHidden } from 'src/styles/utils'
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -59,5 +60,9 @@ export const GlobalStyle = createGlobalStyle`
 
   address {
     font-style: normal;
+  }
+
+  .visuallyHidden {
+    ${visuallyHidden()}
   }
 `
