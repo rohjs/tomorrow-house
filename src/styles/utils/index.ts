@@ -1,3 +1,5 @@
+export { stripPx } from './helpers'
+export { visuallyHidden } from './a11y'
 export { media } from './media'
 export { flexbox, inlineFlexbox } from './flexbox'
 export { textStyle, truncate, lineClamp } from './typography'
