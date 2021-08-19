@@ -1,7 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 
+import modalReducer from './modals'
+
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    modals: modalReducer,
+  },
 })
 
 export type AppDispatch = typeof store.dispatch

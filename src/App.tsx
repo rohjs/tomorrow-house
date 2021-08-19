@@ -1,20 +1,18 @@
 import React from 'react'
-
 import 'normalize.css'
 
-import { Gnb, Column, Container, Row } from 'src/components'
+import { useAppSelector } from 'src/hooks'
+import { getModals } from 'src/app/modals'
+
+import { Gnb, Modal } from 'src/components'
 
 const App: React.FC = () => {
+  const modals = useAppSelector(getModals)
   return (
     <div>
       <Gnb />
-      <Container>
-        <Row>
-          <Column sm={2} md={4}>
-            <div style={{ background: 'red' }}>hi</div>
-          </Column>
-        </Row>
-      </Container>
+
+      {modals.length > 0 && <Modal />}
     </div>
   )
 }
