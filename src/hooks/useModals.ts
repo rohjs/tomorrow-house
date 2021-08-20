@@ -2,12 +2,7 @@ import { useAppDispatch } from '.'
 import type { ModalCategory } from 'src/types/enum'
 import { deleteModal, setModal } from 'src/app/modals'
 
-interface UseModalsReturn {
-  addModal: (modal: Modal) => void
-  removeModal: (category?: ModalCategory) => void
-}
-
-export const useModals = (): UseModalsReturn => {
+export const useModals = () => {
   const dispatch = useAppDispatch()
 
   const addModal = (modal: Modal) => {
@@ -21,5 +16,5 @@ export const useModals = (): UseModalsReturn => {
   return {
     addModal,
     removeModal,
-  }
+  } as const
 }
