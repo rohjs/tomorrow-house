@@ -1,31 +1,32 @@
 import { css } from 'styled-components'
 
-type FlexboxValue =
-  | 'flex-start'
-  | 'flex-end'
-  | 'center'
-  | 'space-between'
-  | 'space-around'
-  | 'stretch'
+function convertFullName(value: string): string {
+  switch (value) {
+    case 'start':
+      return 'flex-start'
+    case 'end':
+      return 'flex-end'
+    case 'between':
+      return 'space-between'
+    case 'around':
+      return 'space-around'
+    default:
+      return value
+  }
+}
 
-export function flexbox(
-  jc: FlexboxValue = 'center',
-  ai: FlexboxValue = 'center'
-) {
+export function flexbox(jc: string = 'center', ai: string = 'center') {
   return css`
     display: flex;
-    justify-content: ${jc};
-    align-items: ${ai};
+    justify-content: ${convertFullName(jc)};
+    align-items: ${convertFullName(ai)};
   `
 }
 
-export function inlineFlexbox(
-  jc: FlexboxValue = 'center',
-  ai: FlexboxValue = 'center'
-) {
+export function inlineFlexbox(jc: string = 'center', ai: string = 'center') {
   return css`
     display: inline-flex;
-    justify-content: ${jc};
-    align-items: ${ai};
+    justify-content: ${convertFullName(jc)};
+    align-items: ${convertFullName(ai)};
   `
 }

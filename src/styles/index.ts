@@ -15,8 +15,8 @@ const fontSizes = {
   xs: '13px',
   sm: '14px',
   base: '16px',
-  lg: '18px',
-  xl: '24px',
+  md: '18px',
+  lg: '24px',
 }
 
 const lineHeights = {
@@ -24,8 +24,8 @@ const lineHeights = {
   xs: '20px',
   sm: '24px',
   base: '24px',
-  lg: '28px',
-  xl: '34px',
+  md: '28px',
+  lg: '34px',
 }
 
 const letterSpacings = {
@@ -33,8 +33,8 @@ const letterSpacings = {
   xs: '-0.01em',
   sm: '-0.01em',
   base: '-0.01em',
-  lg: '-0.02em',
-  xl: '-0.01em',
+  md: '-0.02em',
+  lg: '-0.01em',
 }
 
 const colors = {
@@ -53,6 +53,11 @@ const colors = {
   green: '#22c58b',
 }
 
+const levels = {
+  overlay: 100,
+  sidebar: 200,
+}
+
 export const gutter = '10px'
 
 export const theme: DefaultTheme = {
@@ -63,4 +68,5 @@ export const theme: DefaultTheme = {
   gutter,
   lineHeights,
   letterSpacings,
+  levels,
 }

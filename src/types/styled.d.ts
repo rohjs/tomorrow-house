@@ -1,12 +1,16 @@
 import 'styled-components'
 
 declare module 'styled-components' {
-  export type TypographyScale = 'xxs' | 'xs' | 'sm' | 'base' | 'lg' | 'xl'
+  export type TypographyScale = 'xxs' | 'xs' | 'sm' | 'base' | 'md' | 'lg'
 
   export interface DefaultTheme {
     breakpoints: {
       tablet: string
       desktop: string
+    }
+
+    levels: {
+      [key: string]: number
     }
 
     gutter: string
