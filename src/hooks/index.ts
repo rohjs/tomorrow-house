@@ -1,6 +1,7 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import type { RootState, AppDispatch } from '../app/store'
 
+export { useClickOutside } from './useClickOutside'
 export { useModals } from './useModals'
 export { usePrevious } from './usePrevious'
 export { useResponsive } from './useResponsive'
