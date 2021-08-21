@@ -54,6 +54,8 @@ const colors = {
 }
 
 const levels = {
+  lnb: 50,
+  gnb: 60,
   overlay: 100,
   sidebarModal: 200,
   searchModal: 300,

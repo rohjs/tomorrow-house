@@ -1,5 +1,6 @@
 import React, { memo } from 'react'
 import { Link } from 'react-router-dom'
+import cx from 'classnames'
 
 import { useAppSelector, useModal, useResponsive } from 'src/hooks'
 import { ModalCategory } from 'src/types/enum'
@@ -21,7 +22,11 @@ import { GnbSearch } from './Search'
 import { GnbUserMenu } from './UserMenu'
 import { StyledGnb, StyledGnbIconButton } from './styles'
 
-const Gnb: React.FC = () => {
+interface GnbProps {
+  className?: string
+}
+
+const Gnb: React.FC<GnbProps> = ({ className }) => {
   const user = useAppSelector(getUser)
   const isLoggedIn = user != null
 
@@ -43,7 +48,7 @@ const Gnb: React.FC = () => {
   }
 
   return (
-    <StyledGnb>
+    <StyledGnb className={cx('gnb', className)}>
       <Grid sm={4}>
         <div className="gnbWrapper">
           <div className="gnbLeft">

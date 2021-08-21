@@ -8,6 +8,7 @@ import { Modal } from 'src/components'
 
 const ProductDetailPage: React.FC = () => {
   const modals = useAppSelector(getModals)
+
   return <div>{modals.length > 0 && <Modal />}</div>
 }
 
