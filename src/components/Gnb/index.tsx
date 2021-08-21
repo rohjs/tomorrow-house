@@ -15,7 +15,7 @@ import {
   SearchIcon,
 } from 'src/assets/images'
 import { Button } from '../Button'
-import { Column, Container, Row } from '../Grid'
+import { Grid } from '../Grid'
 import { GnbNav } from './Nav'
 import { GnbSearch } from './Search'
 import { GnbUserMenu } from './UserMenu'
@@ -44,89 +44,85 @@ const Gnb: React.FC = () => {
 
   return (
     <StyledGnb>
-      <Container>
-        <Row>
-          <Column sm={4}>
-            <div className="gnbWrapper">
-              <div className="gnbLeft">
-                <h1 className="logo">
-                  <Link to="/">
-                    <Logo />
-                  </Link>
-                </h1>
+      <Grid sm={4}>
+        <div className="gnbWrapper">
+          <div className="gnbLeft">
+            <h1 className="logo">
+              <Link to="/">
+                <Logo />
+              </Link>
+            </h1>
 
-                {isMobile ? (
+            {isMobile ? (
+              <StyledGnbIconButton
+                className="gnbIconButton menu"
+                type="button"
+                aria-label="메뉴 열기 버튼"
+                onClick={openSidebar}
+              >
+                <MenuIcon />
+              </StyledGnbIconButton>
+            ) : (
+              <GnbNav />
+            )}
+          </div>
+
+          <div className="gnbRight">
+            {isDesktop && <GnbSearch />}
+
+            <div className="buttonGroup">
+              {!isDesktop && (
+                <StyledGnbIconButton
+                  className="gnbIconButton search"
+                  type="button"
+                  aria-label="검색창 열기 버튼"
+                  onClick={openSearchModal}
+                >
+                  <SearchIcon />
+                </StyledGnbIconButton>
+              )}
+              {!isMobile && isLoggedIn && (
+                <>
                   <StyledGnbIconButton
-                    className="gnbIconButton menu"
-                    type="button"
-                    aria-label="메뉴 열기 버튼"
-                    onClick={openSidebar}
-                  >
-                    <MenuIcon />
-                  </StyledGnbIconButton>
-                ) : (
-                  <GnbNav />
-                )}
-              </div>
-
-              <div className="gnbRight">
-                {isDesktop && <GnbSearch />}
-
-                <div className="buttonGroup">
-                  {!isDesktop && (
-                    <StyledGnbIconButton
-                      className="gnbIconButton search"
-                      type="button"
-                      aria-label="검색창 열기 버튼"
-                      onClick={openSearchModal}
-                    >
-                      <SearchIcon />
-                    </StyledGnbIconButton>
-                  )}
-                  {!isMobile && isLoggedIn && (
-                    <>
-                      <StyledGnbIconButton
-                        className="gnbIconButton bookmark"
-                        as={Link}
-                        to="/"
-                        aria-label="스크랩북 페이지로 이동"
-                      >
-                        <BookmarkIcon />
-                      </StyledGnbIconButton>
-                      <StyledGnbIconButton
-                        className="gnbIconButton"
-                        as={Link}
-                        to="/"
-                        aria-label="내 소식 페이지로 이동"
-                      >
-                        <BellIcon />
-                      </StyledGnbIconButton>
-                    </>
-                  )}
-                  <StyledGnbIconButton
-                    className="gnbIconButton cart"
+                    className="gnbIconButton bookmark"
                     as={Link}
-                    to="/cart"
-                    aria-label="장바구니 페이지로 이동"
+                    to="/"
+                    aria-label="스크랩북 페이지로 이동"
                   >
-                    <CartIcon />
-                    <strong className="badge">5</strong>
+                    <BookmarkIcon />
                   </StyledGnbIconButton>
+                  <StyledGnbIconButton
+                    className="gnbIconButton"
+                    as={Link}
+                    to="/"
+                    aria-label="내 소식 페이지로 이동"
+                  >
+                    <BellIcon />
+                  </StyledGnbIconButton>
+                </>
+              )}
+              <StyledGnbIconButton
+                className="gnbIconButton cart"
+                as={Link}
+                to="/cart"
+                aria-label="장바구니 페이지로 이동"
+              >
+                <CartIcon />
+                <strong className="badge">5</strong>
+              </StyledGnbIconButton>
 
-                  {!isMobile && <GnbUserMenu user={user} />}
-                </div>
-
-                {!isMobile && (
-                  <Button size={40} variant="primary" type="button">
-                    글쓰기
-                    <ChevronIcon />
-                  </Button>
-                )}
-              </div>
+              {!isMobile && <GnbUserMenu user={user} />}
             </div>
-          </Column>
-        </Row>
-      </Container>
+
+            {!isMobile && (
+              <Button size={40} variant="primary" type="button">
+                글쓰기
+                <ChevronIcon />
+              </Button>
+            )}
+          </div>
+        </div>
+      </Grid>
     </StyledGnb>
   )
 }
