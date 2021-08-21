@@ -8,10 +8,14 @@ import { SearchIcon } from 'src/assets/images'
 import { Input } from '../Forms'
 
 interface SearchInputProps {
+  className?: string
   onFocus?: () => void
 }
 
-export const SearchInput: React.FC<SearchInputProps> = ({ onFocus }) => {
+export const SearchInput: React.FC<SearchInputProps> = ({
+  className,
+  onFocus,
+}) => {
   const dispatch = useAppDispatch()
   const { history } = useRouter()
 
@@ -40,6 +44,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({ onFocus }) => {
 
   return (
     <Input
+      className={className}
       type="text"
       value={value}
       placeholder="스토어 검색"

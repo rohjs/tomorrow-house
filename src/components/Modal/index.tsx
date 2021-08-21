@@ -16,6 +16,7 @@ const ModalPortal = ({ children }: ModalPortalProps) =>
 
 export const Modal = () => {
   const modals = useAppSelector(getModals)
+
   const { removeModal } = useModals()
 
   if (!modals.length) return null

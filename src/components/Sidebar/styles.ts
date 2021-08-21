@@ -22,7 +22,7 @@ export const StyledSidebar = styled.aside`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: ${({ theme }) => theme.levels.sidebar};
+  z-index: ${({ theme }) => theme.levels.sidebarModal};
   width: ${SIDEBAR_WIDTH};
   height: 100vh;
   padding: 32px 20px;

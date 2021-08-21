@@ -55,7 +55,8 @@ const colors = {
 
 const levels = {
   overlay: 100,
-  sidebar: 200,
+  sidebarModal: 200,
+  searchModal: 300,
 }
 
 const boxShadows = {
