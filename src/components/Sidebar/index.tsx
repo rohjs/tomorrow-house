@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { useAppSelector, useModals, useResponsive } from 'src/hooks'
+import { useAppSelector, useModal, useResponsive } from 'src/hooks'
 import { ModalCategory } from 'src/types/enum'
 import { getUser } from 'src/app/auth'
 
@@ -14,7 +14,7 @@ import navMap from '../navMap.json'
 
 export const Sidebar: React.FC = () => {
   const user = useAppSelector(getUser)
-  const { removeModal } = useModals()
+  const { removeModal } = useModal()
   const { isDesktop } = useResponsive()
 
   const closeSidebar = () => {

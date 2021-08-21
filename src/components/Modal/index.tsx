@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 
-import { useAppSelector, useModals } from 'src/hooks'
+import { useAppSelector, useModal } from 'src/hooks'
 import { getModals } from 'src/app/modal'
 
 import { ModalView } from './View'
@@ -17,7 +17,7 @@ const ModalPortal = ({ children }: ModalPortalProps) =>
 export const Modal = () => {
   const modals = useAppSelector(getModals)
 
-  const { removeModal } = useModals()
+  const { removeModal } = useModal()
 
   if (!modals.length) return null
 
@@ -25,9 +25,10 @@ export const Modal = () => {
 
   return (
     <ModalPortal>
-      {modals.map((modal) => (
-        <ModalView key={`modal-${modal}`} modal={modal} />
-      ))}
+      {modals.map((modal, index) => {
+        const key = `modal-${modal.category}-${index}`
+        return <ModalView key={key} modal={modal} />
+      })}
       <StyledOverlay onClick={closeModal} />
     </ModalPortal>
   )

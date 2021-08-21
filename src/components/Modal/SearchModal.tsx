@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useModals, useResponsive } from 'src/hooks'
+import { useModal, useResponsive } from 'src/hooks'
 import { ModalCategory } from 'src/types/enum'
 
 import { Button } from '../Button'
@@ -10,7 +10,7 @@ import { StyledSearchModal } from './styles'
 
 export const SearchModal: React.FC = () => {
   const { isDesktop } = useResponsive()
-  const { removeModal } = useModals()
+  const { removeModal } = useModal()
 
   if (isDesktop) return null
 

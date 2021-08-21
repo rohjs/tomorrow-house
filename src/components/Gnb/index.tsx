@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import { Link } from 'react-router-dom'
 
-import { useAppSelector, useModals, useResponsive } from 'src/hooks'
+import { useAppSelector, useModal, useResponsive } from 'src/hooks'
 import { ModalCategory } from 'src/types/enum'
 import { getUser } from 'src/app/auth'
 
@@ -26,7 +26,7 @@ const Gnb: React.FC = () => {
   const isLoggedIn = user != null
 
   const { isMobile, isDesktop } = useResponsive()
-  const { addModal } = useModals()
+  const { addModal } = useModal()
 
   const openSidebar = () => {
     addModal({
