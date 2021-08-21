@@ -58,10 +58,17 @@ const levels = {
   sidebar: 200,
 }
 
+const boxShadows = {
+  dropdown: `0 4px 6px rgba(0, 0, 0, 0.18)`,
+  popup: `0 4px 20px rgba(63, 65, 80, 0.3)`,
+  popupReversed: `0 -4px 20px rgba(63, 65, 80, 0.3)`,
+}
+
 export const gutter = '10px'
 
 export const theme: DefaultTheme = {
   breakpoints,
+  boxShadows,
   colors,
   fontFamilies,
   fontSizes,
