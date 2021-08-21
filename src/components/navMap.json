@@ -1,0 +1,25 @@
+{
+  "community": {
+    "index": "홈",
+    "photos": "사진",
+    "projects": "집들이",
+    "advices": "노하우",
+    "experts": "전문가집들이",
+    "guides": "셀프가이드",
+    "questions": "질문과답변",
+    "competitions": "이벤트"
+  },
+  "store": {
+    "index": "스토어",
+    "category": "카테고리",
+    "wedding": "신혼가구",
+    "specials/best": "베스트",
+    "specials/today": "오늘의딜",
+    "specials/holiday": "연휴특가",
+    "specials/refurbish": "리퍼마켓"
+  },
+  "expert": {
+    "index": "시공홈",
+    "services": "시공스토어"
+  }
+}
