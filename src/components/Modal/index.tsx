@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 
 import { useAppSelector, useModals } from 'src/hooks'
-import { getModals } from 'src/app/modals'
+import { getModals } from 'src/app/modal'
 
 import { ModalView } from './View'
 import { StyledOverlay } from './styles'
