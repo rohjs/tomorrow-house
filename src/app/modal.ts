@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+
 import type { ModalCategory } from 'src/types/enum'
 import type { RootState } from './store'
 

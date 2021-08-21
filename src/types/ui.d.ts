@@ -3,6 +3,11 @@ declare interface Modal {
   props: any
 }
 
+declare interface Toast {
+  category: import('./enum').ToastCategory
+  props: any
+}
+
 declare interface SelectOption {
   label: string
   value: string | number
