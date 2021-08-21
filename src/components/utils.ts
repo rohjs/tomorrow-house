@@ -11,6 +11,11 @@ export function getGnbMenuName(category: string) {
   }
 }
 
+export function getPageUrl(category: string, url?: string) {
+  if (!url || url === 'index') return `/${category}`
+  return `/${category}/${url}`
+}
+
 export function getSearchQueryUrl(value: string) {
   return `/search?query=${value}`
 }

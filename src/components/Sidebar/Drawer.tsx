@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import cx from 'classnames'
 
-import { getGnbMenuName } from '../utils'
+import { useRouter } from 'src/hooks'
+import { getGnbMenuName, getPageUrl } from '../utils'
 
 import {
   ChevronIcon,
@@ -23,7 +24,9 @@ export const SidebarDrawer: React.FC<SidebarDrawerProps> = ({
   urlMap,
   closeSidebar,
 }) => {
-  const [open, setOpen] = useState(false)
+  const { location } = useRouter()
+  const [, page] = location.pathname.split('/')
+  const [open, setOpen] = useState(page === category)
 
   const toggleOpen = () => setOpen((prev) => !prev)
 
@@ -57,9 +60,14 @@ export const SidebarDrawer: React.FC<SidebarDrawerProps> = ({
         <ul>
           {Object.entries(urlMap).map(([url, label]) => (
             <li key={`drawerMenuItem-${url}`}>
-              <Link to={`/${category}/${url}`} onClick={closeSidebar}>
+              <NavLink
+                to={getPageUrl(category, url)}
+                onClick={closeSidebar}
+                exact
+                activeClassName="active"
+              >
                 {label}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>

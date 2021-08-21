@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-import { getGnbMenuName } from '../utils'
+import { getGnbMenuName, getPageUrl } from '../../utils'
 
 import { StyledGnbNav } from './styles'
-import urlMap from '../navMap.json'
+import urlMap from '../../navMap.json'
 
 export const GnbNav: React.FC = () => {
   const urlList = Object.keys(urlMap)
@@ -16,7 +16,9 @@ export const GnbNav: React.FC = () => {
       <ul className="gnbNavList">
         {urlList.map((url) => (
           <li className="gnbNavItem" key={`gnbNavItem-${url}`}>
-            <Link to={`/${url}`}>{getGnbMenuName(url)}</Link>
+            <NavLink to={getPageUrl(url)} activeClassName="active">
+              {getGnbMenuName(url)}
+            </NavLink>
           </li>
         ))}
       </ul>

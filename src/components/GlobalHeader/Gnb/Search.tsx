@@ -3,7 +3,7 @@ import cx from 'classnames'
 
 import { useClickOutside } from 'src/hooks'
 
-import { SearchHistory, SearchInput } from '../Search'
+import { SearchHistory, SearchInput } from '../../Search'
 import { StyledGnbSearch } from './styles'
 
 export const GnbSearch = () => {

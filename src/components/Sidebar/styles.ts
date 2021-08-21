@@ -194,12 +194,6 @@ export const StyledSidebarDrawer = styled.div`
     transition: max-height 200ms ease-in-out;
 
     li {
-      &.active {
-        a {
-          color: ${({ theme }) => theme.colors.blue};
-        }
-      }
-
       a {
         ${flexbox('start')};
         ${textStyle('sm')};
@@ -208,6 +202,10 @@ export const StyledSidebarDrawer = styled.div`
         padding: 0 12px;
         font-weight: 700;
         color: ${({ theme }) => theme.colors.primary};
+
+        &.active {
+          color: ${({ theme }) => theme.colors.blue};
+        }
       }
 
       .new {

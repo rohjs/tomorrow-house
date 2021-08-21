@@ -14,8 +14,8 @@ import {
   MenuIcon,
   SearchIcon,
 } from 'src/assets/images'
-import { Button } from '../Button'
-import { Grid } from '../Grid'
+import { Button } from '../../Button'
+import { Grid } from '../../Grid'
 import { GnbNav } from './Nav'
 import { GnbSearch } from './Search'
 import { GnbUserMenu } from './UserMenu'

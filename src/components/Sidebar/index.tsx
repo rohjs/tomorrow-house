@@ -17,9 +17,7 @@ export const Sidebar: React.FC = () => {
   const { removeModal } = useModal()
   const { isDesktop } = useResponsive()
 
-  const closeSidebar = () => {
-    removeModal(ModalCategory.SidebarModal)
-  }
+  const closeSidebar = () => removeModal(ModalCategory.SidebarModal)
 
   if (isDesktop) return null
 
@@ -37,9 +35,21 @@ export const Sidebar: React.FC = () => {
 
       <nav className="sidebarNav">
         <h2 className="visuallyHidden">메뉴</h2>
-        <SidebarDrawer category="community" urlMap={navMap.community} />
-        <SidebarDrawer category="store" urlMap={navMap.store} />
-        <SidebarDrawer category="expert" urlMap={navMap.expert} />
+        <SidebarDrawer
+          category="community"
+          urlMap={navMap.community}
+          closeSidebar={closeSidebar}
+        />
+        <SidebarDrawer
+          category="store"
+          urlMap={navMap.store}
+          closeSidebar={closeSidebar}
+        />
+        <SidebarDrawer
+          category="expert"
+          urlMap={navMap.expert}
+          closeSidebar={closeSidebar}
+        />
       </nav>
 
       <div className="sidebarUserMenu">
