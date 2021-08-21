@@ -4,6 +4,12 @@ declare module 'styled-components' {
   export type TypographyScale = 'xxs' | 'xs' | 'sm' | 'base' | 'md' | 'lg'
 
   export interface DefaultTheme {
+    boxShadows: {
+      dropdown: string
+      popup: string
+      popupReversed: string
+    }
+
     breakpoints: {
       tablet: string
       desktop: string
@@ -41,8 +47,8 @@ declare module 'styled-components' {
       xs: string
       sm: string
       base: string
+      md: string
       lg: string
-      xl: string
     }
 
     lineHeights: {
@@ -50,8 +56,8 @@ declare module 'styled-components' {
       xs: string
       sm: string
       base: string
+      md: string
       lg: string
-      xl: string
     }
 
     letterSpacings: {
@@ -59,8 +65,8 @@ declare module 'styled-components' {
       xs: string
       sm: string
       base: string
+      md: string
       lg: string
-      xl: string
     }
   }
 }
