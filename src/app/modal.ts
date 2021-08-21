@@ -11,7 +11,7 @@ const INITIAL_STATE: ModalState = {
 }
 
 const modalSlice = createSlice({
-  name: 'modals',
+  name: 'modal',
   initialState: INITIAL_STATE,
   reducers: {
     setModal: (state: ModalState, action: PayloadAction<Modal>) => {
@@ -36,4 +36,4 @@ export const { setModal, deleteModal, resetModal } = modalSlice.actions
 
 export default modalSlice.reducer
 
-export const getModals = (state: RootState) => state.modals.modals
+export const getModals = (state: RootState) => state.modal.modals

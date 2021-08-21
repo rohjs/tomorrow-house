@@ -1,6 +1,6 @@
 import { useAppDispatch } from '.'
 import type { ModalCategory } from 'src/types/enum'
-import { deleteModal, setModal } from 'src/app/modals'
+import { deleteModal, setModal } from 'src/app/modal'
 
 export const useModals = () => {
   const dispatch = useAppDispatch()
