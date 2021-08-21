@@ -8,7 +8,12 @@ export interface ColumnProps {
   children?: ReactNode
 }
 
-export const Column = ({ sm, md, lg = md, children }: ColumnProps) => {
+export const Column: React.FC<ColumnProps> = ({
+  sm,
+  md,
+  lg = md,
+  children,
+}) => {
   return (
     <StyledColumn sm={sm} md={md} lg={lg}>
       {children}

@@ -8,7 +8,7 @@ interface ModalViewProps {
   modal: Modal
 }
 
-export const ModalView = ({ modal }: ModalViewProps) => {
+export const ModalView: React.FC<ModalViewProps> = ({ modal }) => {
   const { category, props } = modal
 
   switch (category) {

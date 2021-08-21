@@ -2,18 +2,18 @@ import React, { ReactNode } from 'react'
 import { StyledRow } from './styles'
 
 export interface RowProps {
-  className?: string
-  justifyContent?: string
   alignItems?: string
   children?: ReactNode
+  className?: string
+  justifyContent?: string
 }
 
-export const Row = ({
-  className,
-  justifyContent,
+export const Row: React.FC<RowProps> = ({
   alignItems,
   children,
-}: RowProps) => {
+  className,
+  justifyContent,
+}) => {
   return (
     <StyledRow
       className={className}

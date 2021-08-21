@@ -5,6 +5,6 @@ interface ContainerProps {
   children?: ReactNode
 }
 
-export const Container = ({ children }: ContainerProps) => {
+export const Container: React.FC<ContainerProps> = ({ children }) => {
   return <StyledContainer>{children}</StyledContainer>
 }

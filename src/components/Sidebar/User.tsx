@@ -6,11 +6,14 @@ import { Button } from '../Button'
 import { StyledSidebarAuth, StyledSidebarUser } from './styles'
 
 interface SidebarUserProps {
-  user?: User
+  user: User | null
   closeSidebar: () => void
 }
 
-export const SidebarUser = ({ user, closeSidebar }: SidebarUserProps) => {
+export const SidebarUser: React.FC<SidebarUserProps> = ({
+  user,
+  closeSidebar,
+}) => {
   if (user == null) {
     return (
       <StyledSidebarAuth>
