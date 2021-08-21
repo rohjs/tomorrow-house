@@ -1,15 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
 import { store } from './app/store'
 import { theme } from './styles'
 import { GlobalStyle } from './globalStyle'
 
-import App from './App'
 import Effects from './Effects'
+import Routes from './Routes'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,7 +18,7 @@ ReactDOM.render(
         <ThemeProvider theme={theme}>
           <GlobalStyle />
           <Effects />
-          <Route exact path="/" component={App} />
+          <Routes />
         </ThemeProvider>
       </BrowserRouter>
     </Provider>

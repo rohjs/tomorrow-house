@@ -1,20 +1,22 @@
 import React from 'react'
-import 'normalize.css'
+import { Route } from 'react-router-dom'
 
 import { useAppSelector } from 'src/hooks'
 import { getModals } from 'src/app/modal'
 
 import { Gnb, Modal } from 'src/components'
+import ProductDetailPage from './ProductDetailPage'
 
-const App: React.FC = () => {
+const Routes: React.FC = () => {
   const modals = useAppSelector(getModals)
-  return (
-    <div>
-      <Gnb />
 
+  return (
+    <div className="app">
+      <Gnb />
+      <Route exact path="/" component={ProductDetailPage} />
       {modals.length > 0 && <Modal />}
     </div>
   )
 }
 
-export default App
+export default Routes
