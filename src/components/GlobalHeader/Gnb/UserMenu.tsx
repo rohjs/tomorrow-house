@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import cx from 'classnames'
 
-import { useClickOutside } from 'src/hooks'
+import { useAuth, useClickOutside } from 'src/hooks'
 
 import { StyledGnbUserAuth, StyledGnbUserMenu } from './styles'
 
@@ -11,6 +11,7 @@ interface GnbUserMenuProps {
 }
 
 export const GnbUserMenu: React.FC<GnbUserMenuProps> = ({ user }) => {
+  const { requestLogin } = useAuth()
   const [open, setOpen] = useState(false)
   const userMenuRef = useRef<HTMLDivElement>(null)
 
@@ -22,8 +23,12 @@ export const GnbUserMenu: React.FC<GnbUserMenuProps> = ({ user }) => {
   if (user == null) {
     return (
       <StyledGnbUserAuth>
-        <Link to="/login">로그인</Link>
-        <Link to="/signup">회원가입</Link>
+        <button type="button" onClick={requestLogin}>
+          로그인
+        </button>
+        <button type="button" onClick={requestLogin}>
+          회원가입
+        </button>
       </StyledGnbUserAuth>
     )
   }

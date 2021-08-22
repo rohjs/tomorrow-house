@@ -94,7 +94,7 @@ export const StyledSidebarAuth = styled.div`
   ${flexbox('between')}
   height: 88px;
 
-  a {
+  button {
     width: 84px;
   }
 `

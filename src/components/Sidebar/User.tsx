@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import { useAuth } from 'src/hooks'
+
 import { Avatar } from '../Avatar'
 import { Button } from '../Button'
 import { StyledSidebarAuth, StyledSidebarUser } from './styles'
@@ -14,13 +16,19 @@ export const SidebarUser: React.FC<SidebarUserProps> = ({
   user,
   closeSidebar,
 }) => {
+  const { requestLogin } = useAuth()
+  const handleAuth = () => {
+    requestLogin()
+    closeSidebar()
+  }
+
   if (user == null) {
     return (
       <StyledSidebarAuth>
-        <Button to="/login" variant="outlined" size={40} onClick={closeSidebar}>
+        <Button variant="outlined" size={40} onClick={handleAuth}>
           로그인
         </Button>
-        <Button to="/signup" variant="primary" size={40} onClick={closeSidebar}>
+        <Button variant="primary" size={40} onClick={handleAuth}>
           회원가입
         </Button>
       </StyledSidebarAuth>

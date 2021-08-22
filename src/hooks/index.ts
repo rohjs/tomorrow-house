@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import type { RootState, AppDispatch } from '../app/store'
 
+export { useAuth } from './useAuth'
 export { useClickOutside } from './useClickOutside'
 export { useDatabase } from './useDatabase'
 export { useModal } from './useModal'

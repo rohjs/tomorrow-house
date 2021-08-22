@@ -209,7 +209,7 @@ export const StyledGnbUserAuth = styled.div`
   ${flexbox()};
   margin-right: -6px;
 
-  a {
+  button {
     ${inlineFlexbox()};
     ${textStyle('sm')};
     padding: 4px 6px;

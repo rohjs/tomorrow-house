@@ -20,10 +20,7 @@ export const useRouter = () => {
     push: history.push,
     replace: history.replace,
     pathname: location.pathname,
-    query: {
-      query,
-      ...params,
-    },
+    query,
     match,
     location,
     history,
