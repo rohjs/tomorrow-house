@@ -19,3 +19,7 @@ export function getPageUrl(category: string, url?: string) {
 export function getSearchQueryUrl(value: string) {
   return `/search?query=${value}`
 }
+
+export function isIndexPage(category: string, url: string) {
+  return category === 'community' && url === 'index'
+}
