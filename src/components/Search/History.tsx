@@ -6,6 +6,7 @@ import {
   deleteSearchHistory,
   getSearchHistory,
   resetSearchHistory,
+  setSearchHistory,
 } from 'src/app/searchHistory'
 
 import { SearchHistoryItem } from './HistoryItem'
@@ -24,6 +25,11 @@ export const SearchHistory: React.FC<SearchHistoryProps> = ({
 }) => {
   const dispatch = useAppDispatch()
   const histories = useAppSelector(getSearchHistory)
+
+  const searchHistory = (content: string) => {
+    dispatch(setSearchHistory(content))
+    if (onClick) onClick()
+  }
 
   const deleteHistory = (content: string) => {
     dispatch(deleteSearchHistory(content))
@@ -57,7 +63,7 @@ export const SearchHistory: React.FC<SearchHistoryProps> = ({
               <SearchHistoryItem
                 history={history}
                 deleteHistory={deleteHistory}
-                onClick={onClick}
+                searchHistory={searchHistory}
                 key={history.createdAt}
               />
             ))

@@ -9,26 +9,29 @@ import { StyledSearchHistoryItem } from './styles'
 interface SearchHistoryItemProps {
   history: SearchHistory
   deleteHistory: (content: string) => void
-  onClick?: () => void
+  searchHistory: (content: string) => void
 }
 
 const SearchHistoryItem: React.FC<SearchHistoryItemProps> = ({
   history,
   deleteHistory,
-  onClick,
+  searchHistory,
 }) => {
-  const deleteItem = () => deleteHistory(history.content)
-  const searchQueryUrl = getSearchQueryUrl(history.content)
+  const { content } = history
+
+  const searchQueryUrl = getSearchQueryUrl(content)
+  const searchItem = () => searchHistory(content)
+  const deleteItem = () => deleteHistory(content)
 
   return (
     <StyledSearchHistoryItem>
-      <Link className="word" to={searchQueryUrl} onClick={onClick}>
-        {history.content}
+      <Link className="word" to={searchQueryUrl} onClick={searchItem}>
+        {content}
       </Link>
       <button
         className="delete"
         type="button"
-        value={history.content}
+        value={content}
         onClick={deleteItem}
         aria-label="검색어 삭제"
       >
