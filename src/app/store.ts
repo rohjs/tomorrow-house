@@ -6,6 +6,8 @@ import searchHistoryReducer from './searchHistory'
 import systemReducer from './system'
 import toastReducer from './toast'
 
+import productDetailReducer from './product/detail'
+
 export const store = configureStore({
   reducer: {
     auth: authReducer,
@@ -13,6 +15,7 @@ export const store = configureStore({
     searchHistory: searchHistoryReducer,
     system: systemReducer,
     toast: toastReducer,
+    productDetail: productDetailReducer,
   },
 })
 
