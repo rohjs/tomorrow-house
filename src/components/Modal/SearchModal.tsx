@@ -22,14 +22,14 @@ export const SearchModal: React.FC = () => {
         <header className="searchModalHeader">
           <h1 className="visuallyHidden">검색창</h1>
           <div className="formGroup">
-            <SearchInput className="searchInput" />
+            <SearchInput className="searchInput" onSubmit={closeModal} />
             <Button className="close" variant="ghost" onClick={closeModal}>
               취소
             </Button>
           </div>
         </header>
 
-        <SearchHistory />
+        <SearchHistory onClick={closeModal} />
       </Grid>
     </StyledSearchModal>
   )

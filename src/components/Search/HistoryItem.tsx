@@ -9,18 +9,20 @@ import { StyledSearchHistoryItem } from './styles'
 interface SearchHistoryItemProps {
   history: SearchHistory
   deleteHistory: (content: string) => void
+  onClick?: () => void
 }
 
 const SearchHistoryItem: React.FC<SearchHistoryItemProps> = ({
   history,
   deleteHistory,
+  onClick,
 }) => {
   const deleteItem = () => deleteHistory(history.content)
   const searchQueryUrl = getSearchQueryUrl(history.content)
 
   return (
     <StyledSearchHistoryItem>
-      <Link className="word" to={searchQueryUrl}>
+      <Link className="word" to={searchQueryUrl} onClick={onClick}>
         {history.content}
       </Link>
       <button
@@ -37,5 +39,4 @@ const SearchHistoryItem: React.FC<SearchHistoryItemProps> = ({
 }
 
 const MemoSearchHistoryItem = memo(SearchHistoryItem)
-
 export { MemoSearchHistoryItem as SearchHistoryItem }

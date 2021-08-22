@@ -17,10 +17,11 @@ export const GnbSearch = () => {
 
   return (
     <StyledGnbSearch className="gnbSearch" ref={gnbSearchRef}>
-      <SearchInput onFocus={openHistory} />
+      <SearchInput onFocus={openHistory} onSubmit={closeHistory} />
       <SearchHistory
         className={cx('gnbSearchHistory', { open })}
         hideWhenEmpty
+        onClick={closeHistory}
       />
     </StyledGnbSearch>
   )
