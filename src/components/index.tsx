@@ -1,6 +1,7 @@
 export { Avatar } from './Avatar'
 export { Button } from './Button'
 export { Input, Select } from './Forms'
+export { GlobalFooter } from './GlobalFooter'
 export { GlobalHeader } from './GlobalHeader'
 export { Container, Column, Row, Grid } from './Grid'
 export { Modal } from './Modal'

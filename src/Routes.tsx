@@ -5,7 +5,7 @@ import { useAppSelector } from 'src/hooks'
 import { getModals } from 'src/app/modal'
 import { getToasts } from 'src/app/toast'
 
-import { GlobalHeader, Modal, Toast } from 'src/components'
+import { GlobalFooter, GlobalHeader, Modal, Toast } from 'src/components'
 import ProductDetailPage from './ProductDetailPage'
 
 const Routes: React.FC = () => {
@@ -19,6 +19,7 @@ const Routes: React.FC = () => {
       <Route exact path="/" component={ProductDetailPage} />
       {modals.length > 0 && <Modal />}
       {toasts.length > 0 && <Toast />}
+      <GlobalFooter />
     </div>
   )
 }
