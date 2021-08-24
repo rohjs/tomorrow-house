@@ -8,12 +8,13 @@ import { getUser } from 'src/app/auth'
 import { Logo } from 'src/assets/images'
 import { SidebarDrawer } from './Drawer'
 import { SidebarUser } from './User'
+import { SidebarUserMenu } from './UserMenu'
 import { StyledSidebar } from './styles'
-
 import navMap from '../navMap.json'
 
 export const Sidebar: React.FC = () => {
   const user = useAppSelector(getUser)
+
   const { removeModal } = useModal()
   const { isDesktop } = useResponsive()
 
@@ -52,25 +53,7 @@ export const Sidebar: React.FC = () => {
         />
       </nav>
 
-      <div className="sidebarUserMenu">
-        <ul>
-          <li>
-            <Link to="/">마이페이지</Link>
-          </li>
-          <li>
-            <Link to="/">나의 쇼핑</Link>
-          </li>
-          <li>
-            <Link to="/">스크랩북</Link>
-          </li>
-          <li>
-            <Link to="/">알림</Link>
-          </li>
-          <li>
-            <Link to="/">이벤트</Link>
-          </li>
-        </ul>
-      </div>
+      {!!user && <SidebarUserMenu closeSidebar={closeSidebar} />}
     </StyledSidebar>
   )
 }

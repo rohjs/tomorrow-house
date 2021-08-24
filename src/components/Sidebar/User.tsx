@@ -16,9 +16,9 @@ export const SidebarUser: React.FC<SidebarUserProps> = ({
   user,
   closeSidebar,
 }) => {
-  const { requestLogin } = useAuth()
+  const { requestLogIn } = useAuth()
   const handleAuth = () => {
-    requestLogin()
+    requestLogIn()
     closeSidebar()
   }
 

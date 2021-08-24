@@ -69,25 +69,6 @@ export const StyledSidebar = styled.aside`
       }
     }
   }
-
-  .sidebarUserMenu {
-    margin-top: 16px;
-
-    li {
-      a {
-        ${flexbox('start')}
-        ${textStyle('sm')}
-        width: 100%;
-        height: 36px;
-        padding: 0 12px;
-        color: ${({ theme }) => theme.colors.primary};
-
-        &:active {
-          color: ${({ theme }) => theme.colors.blue};
-        }
-      }
-    }
-  }
 `
 
 export const StyledSidebarAuth = styled.div`
@@ -120,6 +101,26 @@ export const StyledSidebarUser = styled.div`
   .username {
     ${truncate()};
     flex-grow: 1;
+  }
+`
+
+export const StyledSidebarUserMenu = styled.div`
+  margin-top: 16px;
+
+  li {
+    a,
+    button {
+      ${flexbox('start')}
+      ${textStyle('sm')}
+        width: 100%;
+      height: 36px;
+      padding: 0 12px;
+      color: ${({ theme }) => theme.colors.primary};
+
+      &:active {
+        color: ${({ theme }) => theme.colors.blue};
+      }
+    }
   }
 `
 

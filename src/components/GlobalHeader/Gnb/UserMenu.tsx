@@ -11,7 +11,7 @@ interface GnbUserMenuProps {
 }
 
 export const GnbUserMenu: React.FC<GnbUserMenuProps> = ({ user }) => {
-  const { requestLogin } = useAuth()
+  const { requestLogIn, requestLogOut } = useAuth()
   const [open, setOpen] = useState(false)
   const userMenuRef = useRef<HTMLDivElement>(null)
 
@@ -23,10 +23,10 @@ export const GnbUserMenu: React.FC<GnbUserMenuProps> = ({ user }) => {
   if (user == null) {
     return (
       <StyledGnbUserAuth>
-        <button type="button" onClick={requestLogin}>
+        <button type="button" onClick={requestLogIn}>
           로그인
         </button>
-        <button type="button" onClick={requestLogin}>
+        <button type="button" onClick={requestLogIn}>
           회원가입
         </button>
       </StyledGnbUserAuth>
@@ -62,7 +62,9 @@ export const GnbUserMenu: React.FC<GnbUserMenuProps> = ({ user }) => {
             </Link>
           </li>
           <li>
-            <button type="button">로그아웃</button>
+            <button type="button" onClick={requestLogOut}>
+              로그아웃
+            </button>
           </li>
         </ul>
       </div>

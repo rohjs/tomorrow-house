@@ -4,14 +4,14 @@ import store from 'store'
 
 import { useAppDispatch } from '.'
 import { useRouter } from './useRouter'
-import { setAccessToken, setUser } from 'src/app/auth'
+import { resetAuth, setAccessToken, setUser } from 'src/app/auth'
 
 export const useAuth = () => {
   const dispatch = useAppDispatch()
 
   const { history, location } = useRouter()
 
-  const requestLogin = () => {
+  const requestLogIn = () => {
     const { pathname } = location
     store.set('tmrHouse.redirectUrl', pathname)
 
@@ -21,7 +21,7 @@ export const useAuth = () => {
     })
   }
 
-  const postLogin = (
+  const postLogIn = (
     code: string,
     onSuccess?: () => void,
     onFail?: () => void
@@ -50,8 +50,14 @@ export const useAuth = () => {
         getMe(onSuccess, onFail)
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err) // TODO: Handle Error Alert
       })
+  }
+
+  const requestLogOut = () => {
+    window.Kakao.Auth.logout(() => {
+      dispatch(resetAuth())
+    })
   }
 
   const getMe = (onSuccess?: () => void, onFail?: () => void) => {
@@ -77,8 +83,9 @@ export const useAuth = () => {
   }
 
   return {
-    requestLogin,
-    postLogin,
+    requestLogIn,
+    requestLogOut,
+    postLogIn,
     getMe,
   } as const
 }

@@ -30,7 +30,14 @@ const authSlice = createSlice({
       state.user = null
       store.remove('tmrHouse.auth.user')
     },
-    resetAuth: () => INITIAL_STATE,
+    resetAuth: () => {
+      store.remove('tmrHouse.auth.user')
+      store.remove('tmrHouse.auth.accessToken')
+      return {
+        user: null,
+        accessToken: '',
+      }
+    },
   },
 })
 
