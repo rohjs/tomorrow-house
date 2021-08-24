@@ -1,42 +1,40 @@
-import React, { memo, useRef } from 'react'
-import type { TinySliderSettings } from 'tiny-slider'
+import React, { memo } from 'react'
+import { TinySliderSettings } from 'tiny-slider-react'
 
 import { useAppSelector } from 'src/hooks'
 import { getProductImages } from 'src/app/product/detail'
 
-import { TinySlider, TinySliderThumbnail } from 'src/components'
+import { Slider, Thumbnails } from 'src/components'
 import { StyledProductCarousel } from './styles'
 
 const productCarouselOptions: TinySliderSettings = {
   autoplay: true,
   autoplayButtonOutput: false,
   controls: false,
+  navContainer: '.productCarouselThumbnail',
 }
 
 const ProductCarousel: React.FC = () => {
   const productImages = useAppSelector(getProductImages)
-  const thumbnailRef = useRef<HTMLDivElement>(null)
   const id = 'product-carousel'
-
-  const children = productImages.map((image) => {
-    return <img src={`/samples/${image}`} alt="" key={`${id}-${image}`} />
-  })
 
   if (!productImages.length) return null
 
   return (
     <StyledProductCarousel>
-      <TinySlider
+      <Slider
+        className="productCarouselSlider"
         id={id}
         options={productCarouselOptions}
-        thumbnailRef={thumbnailRef}
-      >
-        {children}
-      </TinySlider>
-
-      <TinySliderThumbnail id={id} thumbnailRef={thumbnailRef} tabletSize={56}>
-        {children}
-      </TinySliderThumbnail>
+        images={productImages}
+      />
+      <Thumbnails
+        id={id}
+        images={productImages}
+        tabletSize={56}
+        desktopSize={75}
+        className="productCarouselThumbnail"
+      />
     </StyledProductCarousel>
   )
 }
