@@ -2427,6 +2427,13 @@
     "@types/testing-library__dom" "*"
     "pretty-format" "^25.1.0"
 
+"@types/tiny-slider-react@^0.3.3":
+  "integrity" "sha512-I1tx3b3kGz+JuefwfNfQu0cDmoYhrlwZxVedRyJ3O+mB7As5cKX7oZ1gA7uruHR6D3RY92amEykkYDbJAIkprg=="
+  "resolved" "https://registry.npmjs.org/@types/tiny-slider-react/-/tiny-slider-react-0.3.3.tgz"
+  "version" "0.3.3"
+  dependencies:
+    "@types/react" "*"
+
 "@types/uglify-js@*":
   "integrity" "sha512-sYAF+CF9XZ5cvEBkI7RtrG9g2GtMBkviTnBxYYyq+8BWvO4QtXfwwR6a2LFwCi4evMKZfpv6U43ViYvv17Wz3Q=="
   "resolved" "https://registry.npmjs.org/@types/uglify-js/-/uglify-js-3.12.0.tgz"
@@ -12078,7 +12085,14 @@
   "resolved" "https://registry.npmjs.org/tiny-invariant/-/tiny-invariant-1.1.0.tgz"
   "version" "1.1.0"
 
-"tiny-slider@^2.9.3":
+"tiny-slider-react@^0.5.3":
+  "integrity" "sha512-miTPlaWgwfg2U7WBDxdR40LFhAncIS2fF03tuNE5nqVIF5tuvjVFHGz1V0LSJWoNeOtXgoWs94JB2/hdxrCWqA=="
+  "resolved" "https://registry.npmjs.org/tiny-slider-react/-/tiny-slider-react-0.5.3.tgz"
+  "version" "0.5.3"
+  dependencies:
+    "tiny-slider" "^2.9.2"
+
+"tiny-slider@^2.9.2", "tiny-slider@^2.9.3":
   "integrity" "sha512-KZY45m+t3fb3Kwlqsic0PIos1lgTNXBEC5N/AhI3aNEcryrd0nXohZMbVPMkcNYdbLjY1IUJAXWYAO6/RGJnKw=="
   "resolved" "https://registry.npmjs.org/tiny-slider/-/tiny-slider-2.9.3.tgz"
   "version" "2.9.3"
