@@ -35,11 +35,15 @@ export const SidebarUser: React.FC<SidebarUserProps> = ({
     )
   }
 
-  const { id, username, userImage } = user
+  const { id, username, profileImageUrl } = user
   return (
     <StyledSidebarUser>
       <Link to={`/user/${id}`} onClick={closeSidebar}>
-        <Avatar className="avatar" username={username} image={userImage} />
+        <Avatar
+          className="avatar"
+          username={username}
+          image={profileImageUrl}
+        />
         <strong className="username">{username}</strong>
       </Link>
     </StyledSidebarUser>

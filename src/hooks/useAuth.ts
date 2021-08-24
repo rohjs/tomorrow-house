@@ -62,8 +62,9 @@ export const useAuth = () => {
         dispatch(
           setUser({
             id: response.id,
+            email: response.kakao_account.email,
             username: kakaoProfile.nickname,
-            userImage: kakaoProfile.profile_image_url,
+            profileImageUrl: kakaoProfile.profile_image_url,
           })
         )
         if (onSuccess) onSuccess()

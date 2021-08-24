@@ -1,5 +1,6 @@
 declare interface User {
   id: number
+  email: string
   username: string
-  userImage: string
+  profileImageUrl: string
 }

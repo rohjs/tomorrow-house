@@ -41,7 +41,7 @@ export const GnbUserMenu: React.FC<GnbUserMenuProps> = ({ user }) => {
         onClick={toggleUserMenu}
         aria-label="마이메뉴 열기 버튼"
       >
-        <img src={user.userImage} alt={user.username} />
+        <img src={user.profileImageUrl} alt={user.username} />
       </button>
 
       <div className="gnbUserMenuContent">
