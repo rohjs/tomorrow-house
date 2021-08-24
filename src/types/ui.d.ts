@@ -1,11 +1,16 @@
+declare interface BreadcrumbLink {
+  url: string
+  label: string
+}
+
 declare interface Modal {
   category: import('./enum').ModalCategory
   props: any
 }
 
-declare interface Toast {
-  category: import('./enum').ToastCategory
-  props: any
+declare interface SearchHistory {
+  content: string
+  createdAt: number
 }
 
 declare interface SelectOption {
@@ -14,7 +19,7 @@ declare interface SelectOption {
   disabled?: boolean
 }
 
-declare interface SearchHistory {
-  content: string
-  createdAt: number
+declare interface Toast {
+  category: import('./enum').ToastCategory
+  props: any
 }

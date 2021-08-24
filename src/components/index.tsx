@@ -1,4 +1,5 @@
 export { Avatar } from './Avatar'
+export { Breadcrumb } from './Breadcrumb'
 export { Button } from './Button'
 export { Input, Select } from './Forms'
 export { GlobalFooter } from './GlobalFooter'
