@@ -1,9 +1,15 @@
 import styled from 'styled-components'
 
 import { flexbox, media, positionCenter } from 'src/styles/utils'
-import type { TinySliderThumbnailProps } from './Thumbnail'
 
-export const StyledTinySliderItem = styled.div`
+import type { ThumbnailsProps } from './Thumbnails'
+
+export const StyledSlider = styled.div`
+  overflow: hidden;
+  border-radius: 4px;
+`
+
+export const StyledSliderItem = styled.div`
   figure {
     position: relative;
     width: 100%;
@@ -20,16 +26,16 @@ export const StyledTinySliderItem = styled.div`
   }
 `
 
-export const StyledTinySliderThumbnail = styled.div`
+export const StyledThumbnails = styled.div`
   ${flexbox('start')};
 `
 
-type StyledTinySliderThumbnailItemProps = Pick<
-  TinySliderThumbnailProps,
+type StyledThumbnailItemProps = Pick<
+  ThumbnailsProps,
   'size' | 'tabletSize' | 'desktopSize'
 >
 
-export const StyledTinySliderThumbnailItem = styled.button<StyledTinySliderThumbnailItemProps>`
+export const StyledThumbnailItem = styled.button<StyledThumbnailItemProps>`
   ${flexbox()};
   position: relative;
   width: ${({ size }) => size}px;
@@ -55,7 +61,7 @@ export const StyledTinySliderThumbnailItem = styled.button<StyledTinySliderThumb
     transition: transform 200ms;
   }
 
-  ${media.greaterThan<StyledTinySliderThumbnailItemProps>('tablet')`
+  ${media.greaterThan<StyledThumbnailItemProps>('tablet')`
     width: ${({ tabletSize }) => tabletSize}px;
     height: ${({ tabletSize }) => tabletSize}px;
 
@@ -65,7 +71,7 @@ export const StyledTinySliderThumbnailItem = styled.button<StyledTinySliderThumb
     }
   `}
 
-  ${media.greaterThan<StyledTinySliderThumbnailItemProps>('desktop')`
+  ${media.greaterThan<StyledThumbnailItemProps>('desktop')`
     width: ${({ desktopSize }) => desktopSize}px;
     height: ${({ desktopSize }) => desktopSize}px;
 
@@ -74,4 +80,43 @@ export const StyledTinySliderThumbnailItem = styled.button<StyledTinySliderThumb
       height: ${({ desktopSize }) => desktopSize}px;
     }
   `}
+`
+
+export const StyledControls = styled.div`
+  ${flexbox('between')};
+  width: 100%;
+`
+
+export const StyledControlButton = styled.button`
+  ${flexbox()};
+  width: 40px;
+  height: 40px;
+  font-size: 28px;
+  color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.white};
+  border-radius: 50%;
+  transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
+
+  &.prev {
+    svg {
+      margin-left: -2px;
+      transform: rotate(90deg);
+    }
+  }
+
+  &.next {
+    svg {
+      margin-right: -2px;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.blue};
+  }
+
+  &[disabled] {
+    visibility: hidden;
+  }
 `
