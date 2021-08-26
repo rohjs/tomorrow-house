@@ -33,7 +33,10 @@ const INITIAL_STATE: ProductDetailPageState = {
   },
   mileage: 0,
   delivery: {
-    fee: 0,
+    fee: {
+      fee: 0,
+      backwoodsFee: 0,
+    },
     refundExchangeInfo: {
       refundFee: 0,
       exchangeFee: 0,
@@ -76,6 +79,7 @@ export default productDetailPageSlice.reducer
 
 const getCategory = (state: RootState) => state.productDetail.category
 const getRating = (state: RootState) => state.productDetail.rating
+const getDelivery = (state: RootState) => state.productDetail.delivery
 
 export const getDetailImages = (state: RootState) =>
   state.productDetail.detailImages
@@ -96,3 +100,13 @@ export const getTotalRatingCounts = createSelector([getRating], (rating) => {
   const { countFor1, countFor2, countFor3, countFor4, countFor5 } = rating
   return countFor1 + countFor2 + countFor3 + countFor4 + countFor5
 })
+
+export const getDeliveryFee = createSelector(
+  [getDelivery],
+  (delivery) => delivery.fee.fee
+)
+
+export const getDeliveryBackwoodsFee = createSelector(
+  [getDelivery],
+  (delivery) => delivery.fee.backwoodsFee
+)

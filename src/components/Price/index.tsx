@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { formatPrice } from 'src/utils/num'
 import { StyledPrice, StyledPriceOff } from './styles'
 
 interface PriceOffProps {
@@ -15,9 +16,7 @@ export interface PriceProps extends PriceOffProps {
 export const PriceOff: React.FC<PriceOffProps> = ({ amount, className }) => {
   return (
     <StyledPriceOff className={className}>
-      <strong className="amount">
-        {amount.toLocaleString('en', { maximumFractionDigits: 0 })}
-      </strong>
+      <strong className="amount">{formatPrice(amount)}</strong>
       <span className="currency">원</span>
     </StyledPriceOff>
   )
@@ -30,9 +29,7 @@ export const Price: React.FC<PriceProps> = ({
 }) => {
   return (
     <StyledPrice className={className} size={size}>
-      <strong className="amount">
-        {amount.toLocaleString('en', { maximumFractionDigits: 0 })}
-      </strong>
+      <strong className="amount">{formatPrice(amount)}</strong>
       <span className="currency">원</span>
     </StyledPrice>
   )

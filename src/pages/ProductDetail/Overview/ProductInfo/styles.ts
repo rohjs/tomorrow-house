@@ -150,3 +150,37 @@ export const StyledProductInfoMileage = styled.p`
     color: ${({ theme }) => theme.colors.blue};
   }
 `
+
+export const StyledProductInfoDelivery = styled.div`
+  padding-top: 12px;
+  border-top: 1px solid ${({ theme }) => theme.colors.border};
+
+  p {
+    ${flexbox('start')};
+    ${textStyle('sm')};
+    padding: 2px 0;
+
+    .tag {
+      margin-left: 4px;
+    }
+  }
+
+  .misc {
+    ${textStyle('xs')};
+    color: ${({ theme }) => theme.colors.secondary};
+  }
+
+  ${media.greaterThan('tablet')`
+    padding-top: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+
+    p {
+      ${textStyle('base')};
+    }
+
+    .misc {
+      margin-top: 4px;
+    }
+  `}
+`

@@ -19,12 +19,17 @@ declare interface ProductCategory {
 }
 
 declare interface ProductDelivery {
-  fee: number
+  fee: ProductDeliveryFee
   refundExchangeInfo: {
     refundFee: number
     exchangeFee: number
     address: string
   }
+}
+
+declare interface ProductDeliveryFee {
+  fee: number
+  backwoodsFee: number
 }
 
 declare interface ProductPrice {
