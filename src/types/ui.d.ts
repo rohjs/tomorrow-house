@@ -1,6 +1,6 @@
 declare interface BreadcrumbLink {
-  url: string
   label: string
+  url: string
 }
 
 declare interface Modal {
