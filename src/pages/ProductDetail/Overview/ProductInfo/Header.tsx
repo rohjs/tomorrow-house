@@ -7,15 +7,8 @@ import { getTotalRatingCounts } from 'src/app/product/detail'
 import { StarRating } from 'src/components'
 import { StyledProductInfoHeader } from './styles'
 
-interface ProductInfoHeaderProps {
-  seller: ProductSeller
-  rating: ProductRating
-}
-
-const ProductInfoHeader: React.FC<ProductInfoHeaderProps> = ({
-  seller,
-  rating,
-}) => {
+const ProductInfoHeader = () => {
+  const { rating, seller } = useAppSelector((state) => state.productDetail)
   const totalRatingCounts = useAppSelector(getTotalRatingCounts)
 
   return (

@@ -81,6 +81,8 @@ export const getDetailImages = (state: RootState) =>
   state.productDetail.detailImages
 export const getProductImages = (state: RootState) =>
   state.productDetail.productImages
+export const getPrice = (state: RootState) => state.productDetail.price
+export const getMileage = (state: RootState) => state.productDetail.mileage
 export const getSeller = (state: RootState) => state.productDetail.seller
 
 export const getBreadcrumbLinks = createSelector([getCategory], (category) => {
