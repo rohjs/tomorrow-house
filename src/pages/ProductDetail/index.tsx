@@ -2,10 +2,9 @@ import React from 'react'
 import firebase from 'firebase'
 
 import { useAppDispatch, useDatabase, useMount } from 'src/hooks'
-import { setDetailImages, setProductImages } from 'src/app/product/detail'
+import { setProduct } from 'src/app/product/detail'
 
-import { Grid } from 'src/components'
-import ProductCarousel from './ProductCarousel'
+import ProductDetailOverview from './Overview'
 
 const ProductDetailPage: React.FC = () => {
   const dispatch = useAppDispatch()
@@ -13,9 +12,8 @@ const ProductDetailPage: React.FC = () => {
 
   const handleResponse = (snapshot: firebase.database.DataSnapshot) => {
     if (!snapshot.exists()) return
-    const { detailImages, productImages } = snapshot.val()
-    dispatch(setDetailImages(detailImages))
-    dispatch(setProductImages(productImages))
+    const product = snapshot.val() as Product
+    dispatch(setProduct(product))
   }
 
   const fetchProductDetail = () => {
@@ -26,9 +24,7 @@ const ProductDetailPage: React.FC = () => {
 
   return (
     <main>
-      <Grid sm={4}>
-        <ProductCarousel />
-      </Grid>
+      <ProductDetailOverview />
     </main>
   )
 }
