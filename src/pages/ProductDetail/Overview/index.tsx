@@ -12,11 +12,10 @@ const ProductDetailOverview: React.FC = () => {
 
   return (
     <Container>
-      <Grid sm={4}>
-        <Breadcrumb id="productDetailBreadcrumb" links={breadcrumbLinks} />
-      </Grid>
-
       <Row>
+        <Column sm={4}>
+          <Breadcrumb id="productDetailBreadcrumb" links={breadcrumbLinks} />
+        </Column>
         <Column sm={4} md={6} lg={7}>
           <ProductCarousel />
         </Column>
