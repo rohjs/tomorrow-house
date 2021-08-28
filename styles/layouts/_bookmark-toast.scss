@@ -6,12 +6,17 @@
   bottom: 0;
   left: 0;
   z-index: $bookmark-toast-level;
+  display: none;
   width: 100%;
   height: 56px;
   padding-right: $grid-margin;
   padding-left: $close-button-size;
   background-color: $white;
   box-shadow: $popup-reversed-shadow;
+
+  &.is-active {
+    display: flex;
+  }
 
   .bookmark-title {
     @include text-style(13, $primary);
@@ -37,6 +42,37 @@
 
     a {
       margin-right: 4px;
+    }
+  }
+
+  @include responsive(D) {
+    @include pos-center-x(fixed);
+    bottom: 40px;
+    height: 80px;
+    max-width: 480px;
+    padding-right: 20px;
+    padding-left: 56px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: $popup-shadow;
+
+    .bookmark-title {
+      @include text-style(16);
+    }
+
+    .close-button {
+      left: (56px - $close-button-size) / 2;
+      font-size: 24px;
+
+      &:hover {
+        color: $secondary;
+      }
+    }
+
+    .button-group {
+      a {
+        margin-right: 8px;
+      }
     }
   }
 }
