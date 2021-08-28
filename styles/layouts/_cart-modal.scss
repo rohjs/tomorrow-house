@@ -1,0 +1,47 @@
+.cart-modal {
+  @include pos-center(fixed);
+  z-index: $cart-modal-level;
+  width: calc(100% - #{$grid-margin * 2});
+  max-width: 360px;
+  padding: 40px 24px;
+  overflow: hidden;
+  text-align: center;
+  background-color: $white;
+  border-radius: 8px;
+
+  .cart-title {
+    @include text-style(16, $dark);
+    margin-bottom: 24px;
+  }
+
+  .button-group {
+    width: 100%;
+
+    a,
+    button {
+      width: 100%;
+    }
+
+    a {
+      margin-bottom: 8px;
+    }
+  }
+
+  @include responsive(D) {
+    padding-right: 32px;
+    padding-left: 32px;
+
+    .cart-title {
+      @include text-style(18);
+      margin-bottom: 16px;
+    }
+
+    .button-group {
+      a,
+      button {
+        @include text-style(18);
+        height: 55px;
+      }
+    }
+  }
+}
