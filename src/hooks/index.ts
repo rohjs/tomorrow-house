@@ -4,7 +4,6 @@ import type { RootState, AppDispatch } from '../app/store'
 
 export { useAuth } from './useAuth'
 export { useClickOutside } from './useClickOutside'
-export { useDatabase } from './useDatabase'
 export { useModal } from './useModal'
 export { usePrevious } from './usePrevious'
 export { useResponsive } from './useResponsive'
