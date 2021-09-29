@@ -4,6 +4,7 @@ import type { RootState, AppDispatch } from '../app/store'
 
 export { useAuth } from './useAuth'
 export { useClickOutside } from './useClickOutside'
+export { useFirebase } from './useFirebase'
 export { useModal } from './useModal'
 export { usePrevious } from './usePrevious'
 export { useResponsive } from './useResponsive'
