@@ -34,6 +34,7 @@ function toggleOrderCtaBookmark() {
   }
 
   countSpan.innerHTML = newCount.toLocaleString()
+  countSpan.setAttribute('aria-label', `북마크 ${newCount.toLocaleString()}회`)
   this.classList.toggle('is-active')
 }
 
