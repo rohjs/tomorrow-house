@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "node-sass": "node-sass",
-    "sass": "node-sass -wr --source-map true styles/main.scss style.css"
+    "sass": "node-sass -wr --source-map true styles/main.scss style.css",
+    "sass:build": "node-sass -r --source-map true styles/main.scss style.css",
+    "build": "node script/build.js",
+    "deploy": "npm run sass:build && npm run build && node script/deploy.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +23,15 @@
   },
   "homepage": "https://github.com/rohjs/tomorrow-house#readme",
   "dependencies": {
-    "node-sass": "^5.0.0"
+    "node-sass": "^6.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "cssnano": "^5.0.17",
+    "fs-extra": "^10.0.0",
+    "gh-pages": "^3.2.3",
+    "imagemin": "^8.0.1",
+    "imagemin-jpegtran": "^7.0.0",
+    "postcss": "^8.4.6"
   }
 }
